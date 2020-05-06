@@ -80,7 +80,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
                     </button>
@@ -118,23 +118,44 @@
                     <div class="card-body ">
                         <h5 class="card-title">Total Sales </h5>
                         <p class="card-text"><small
-                                class="text-muted">$<?= $total['total'] ?? 'There is no sales' ?></small></p>
+                                class="text-muted">$<?= $sale->total()['total'] ?? 'There is no sales' ?></small></p>
                     </div>
                 </div>
                 <div class="h-25 m-4 card bg-light ">
                     <div class="card-body">
                         <h5 class="card-title">Total Tax </h5>
-                        <p class="card-text">$<?= $totalTax['TotalTax'] ?? 'There is no sales' ?></p>
+                        <p class="card-text">$<?= $sale->totalTax()['TotalTax'] ?? 'There is no sales' ?></p>
                     </div>
                 </div>
                 <div class="h-25 m-4 card bg-light ">
                     <div class="card-body">
                         <h5 class="card-title">Top Sales Location </h5>
-                        <p class="card-text">$<?= $topSales['TopSales'] ?? 'There is no sales' ?></p>
+                        <p class="card-text">$<?= $sale->topSale()['TopSales'] ?? 'There is no sales' ?></p>
 
                     </div>
                 </div>
             </div>
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Province</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Total Sales </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $id = 1; foreach($a as $item):?>
+                    <tr>
+                        <th scope="row"><?= $id++ ?></th>
+                        <td> <?= $item['province'] ?> </td>
+                        <td> <?= $item['city'] ?> </td>
+                        <td> <?= $item['total'] ?> </td>
+
+                    </tr>
+                    <?php endforeach;?>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

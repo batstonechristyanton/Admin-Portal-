@@ -45,13 +45,15 @@ class QueryBuilder{
         $this->query .= " where {$column} {$operator} '{$value}'";
         return $this;
     }
-
+     
+    public function groupby ($column)
+    {
+        $this->query .= " group by {$column}";
+        return $this;
+    }
 
     public function get()
     {
-        // echo '<pre>';
-        // die(var_dump($this->query));
-        // echo '</pre>';
        return $this->execute(PDO::FETCH_ASSOC);
     }
 }
