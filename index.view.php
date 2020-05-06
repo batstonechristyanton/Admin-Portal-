@@ -99,7 +99,7 @@
 
             <p></p>
 
-            <div class="card text-center text-white bg-dark">
+            <div class="card text-center text-white bg-dark " >
                 <div class="card-header">
                     Total sales
                 </div>
@@ -113,7 +113,7 @@
             </div>
 
             <div class="card-deck">
-                <div class="h-25 m-4 card bg-light ">
+                <div class="h-25 m-4 card bg-light " >
 
                     <div class="card-body ">
                         <h5 class="card-title">Total Sales </h5>
